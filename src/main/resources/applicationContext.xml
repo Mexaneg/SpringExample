@@ -19,20 +19,21 @@
     </bean>
 
 
-    <bean id = "musicPlayer"
-          class="ru.mexaneg.springexample.MusicPlayer">
+    <bean id="musicPlayer"
+          class="ru.mexaneg.springexample.MusicPlayer"
+          scope="prototype">
         <!--<constructor-arg ref = "musicBean"/>-->
         <property name="musicList">
-                  <list>
-                      <ref bean="popMusicBean"></ref>
-                      <ref bean="rockMusicBean"></ref>
-                      <ref bean="electroMusicBean"></ref>
-                  </list>
+            <list>
+                <ref bean="popMusicBean"></ref>
+                <ref bean="rockMusicBean"></ref>
+                <ref bean="electroMusicBean"></ref>
+            </list>
         </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
 
+    </bean>
 
 
 </beans>

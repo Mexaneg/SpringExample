@@ -5,6 +5,9 @@ import org.springframework.context.support.*;
 public class Main {
     public static void main(String[] args){
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ElectroMusic electroMusic = applicationContext.getBean("electroMusicBean",ElectroMusic.class);
+        ElectroMusic electroMusic2 = applicationContext.getBean("electroMusicBean",ElectroMusic.class);
+        System.out.println(electroMusic.getSong());
         MusicPlayer firstPlayer = applicationContext.getBean("musicPlayer",MusicPlayer.class);
         MusicPlayer secondPlayer = applicationContext.getBean("musicPlayer",MusicPlayer.class);
         secondPlayer.setName("Second Player");

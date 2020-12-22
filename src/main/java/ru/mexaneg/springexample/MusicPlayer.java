@@ -10,6 +10,14 @@ public class MusicPlayer {
     public MusicPlayer() {
     }
 
+    public void init(){
+        System.out.println("Init Music player"+this.toString());
+    }
+
+    public void destroy(){
+        System.out.println("Destroy Music player"+this.toString());
+    }
+
     public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }

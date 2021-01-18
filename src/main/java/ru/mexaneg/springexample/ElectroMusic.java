@@ -1,7 +1,16 @@
 package ru.mexaneg.springexample;
 
+import java.util.*;
+
+import org.springframework.stereotype.*;
+
+@Component("electroMusic")
 public class ElectroMusic implements Music{
+    private ArrayList<String> musicList = new ArrayList<>();
     private ElectroMusic(){
+        musicList.add("Euphoria");
+        musicList.add("Midnight King");
+        musicList.add("Only in my Dreams");
     }
 
     @Override

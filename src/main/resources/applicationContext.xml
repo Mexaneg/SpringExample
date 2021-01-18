@@ -5,42 +5,5 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="electroMusicBean"
-          class="ru.mexaneg.springexample.ElectroMusic"
-          factory-method="getMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy">
-    </bean>
-
-    <bean id="rockMusicBean"
-          class="ru.mexaneg.springexample.RockMusic"
-          factory-method="getMusic">
-    </bean>
-
-    <bean id="popMusicBean"
-          class="ru.mexaneg.springexample.PopMusic"
-          factory-method="getMusic">
-    </bean>
-
-
-        <bean id="musicPlayer"
-              class="ru.mexaneg.springexample.MusicPlayer"
-              scope="prototype"
-              init-method="init"
-              destroy-method="destroy">
-            <!--<constructor-arg ref = "musicBean"/>-->
-            <property name="musicList">
-                <list>
-                    <ref bean="popMusicBean"></ref>
-                    <ref bean="rockMusicBean"></ref>
-                    <ref bean="electroMusicBean"></ref>
-                </list>
-            </property>
-            <property name="name" value="${musicPlayer.name}"/>
-            <property name="volume" value="${musicPlayer.volume}"/>
-
-        </bean>
-
-
+    <context:component-scan base-package="ru.mexaneg.springexample"/>
 </beans>
